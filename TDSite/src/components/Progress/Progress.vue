@@ -23,12 +23,12 @@ const width = computed(() => {
 <template>
   <div class="space-y-2">
     <div class="space-y-2">
-      <p class="text-gray-500 mb-1">
+      <div class="text-gray-500 mb-1">
         {{ label }}
-      </p>
-      <h2 class="text-xl dark:text-white font-bold">
+      </div>
+      <label class="text-xl dark:text-white font-bold">
         {{  value  }}
-      </h2>
+      </label>
     </div>
 
     <div class="flex items-center justify-between text-sm font-medium dark:text-gray-500 mt-2">

@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-wrap-reverse">
-        <div class="w-1/3">
+        <div class="w-1/4">
             <v-card class="mx-auto" color="transparent" image="../../assets/img/bg.png"
                 subtitle="VUE-CHARTS EXAMPLES..." title="图表示例">
                 <v-card-actions>
@@ -21,7 +21,7 @@
                 </v-expand-transition>
             </v-card>
         </div>
-        <div class="w-1/3 px-4">
+        <div class="w-1/4 px-4">
             <v-card class="mx-auto" color="transparent" image="../../assets/img/bg.png"
                 subtitle="PLYR VIDEO&AUDIO EXAMPLES" title="多媒体示例">
                 <template v-slot:actions>
@@ -30,11 +30,20 @@
                 </template>
             </v-card>
         </div>
-        <div class="w-1/3">
+        <div class="w-1/4">
             <v-card class="mx-auto" color="transparent" image="../../assets/img/bg.png"
                 subtitle="LIGHTBOX GALLERY EXAMPLES" title="加载图库示例">
                 <template v-slot:actions>
                     <v-btn href="/lightbox" append-icon="mdi-chevron-right" color="green-darken-1" text="LIGHTBOX"
+                        variant="text" block></v-btn>
+                </template>
+            </v-card>
+        </div>
+        <div class="w-1/4">
+            <v-card class="mx-auto" color="transparent" image="../../assets/img/bg.png"
+                subtitle="GALLERY GALLERY EXAMPLES" title="加载图库示例">
+                <template v-slot:actions>
+                    <v-btn href="/gallery" append-icon="mdi-chevron-right" color="green-darken-1" text="GALLERY"
                         variant="text" block></v-btn>
                 </template>
             </v-card>

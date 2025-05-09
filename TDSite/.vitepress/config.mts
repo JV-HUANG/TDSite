@@ -56,19 +56,20 @@ export default defineConfig({
   title: "哎呦土豆",
   description: "在建中......",//站点描述
   themeConfig: {
-    logo: '/assets/img/logo.svg',
-    siteTitle: false,//显示站点标题
+    logo: '/assets/img/logo.png',
+    // siteTitle: false,//显示站点标题
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
       {
-        text: 'EXAMPLE',
+        text: '示例',
         items: [
           { text: 'markdown', link: '/markdown-examples' },
           { text: 'API', link: '/api-examples' },
           { text: 'CHARTS', link: '/charts' },
           { text: 'LIGHTBOX', link: '/lightbox' },
-          { text: 'MEDIA', link: '/media' }
+          { text: 'MEDIA', link: '/media' },
+          { text: 'GALLERY', link: '/gallery' }
         ]
       }
     ],
@@ -81,6 +82,7 @@ export default defineConfig({
           { text: 'Runtime API', link: '/api-examples' },
           { text: 'CHARTS', link: '/charts' },
           { text: 'LIGHTBOX', link: '/lightbox' },
+          { text: 'GALLERY', link: '/gallery' },
           { text: 'MEDIA', link: '/media' }
         ]
       }
@@ -90,9 +92,9 @@ export default defineConfig({
       provider: 'local'
     },
 
-    // socialLinks: [
-    //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    // ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/JV-HUANG/TDSite' }
+    ],
     
     footer: {
       message: '粤ICP备2025381183号 & 基于 MIT 许可发布',
