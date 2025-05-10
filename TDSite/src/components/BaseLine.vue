@@ -79,14 +79,14 @@ const columns = [
 <template>
   <div class="grid grid-cols-12 gap-8 mb-8">
     <div class="col-span-8">
-      <h2>多重折线图</h2>
+      <h2 class="heading-2">多重折线图</h2>
       <p class="text-neutral-500">设备的网站访问者数量</p>
       <BaseLine :data="InvestmentData" :height="322" :categories="categories" :y-num-ticks="8" :x-tick-line="false"
         :x-formatter="(i: number): string => `${InvestmentData[i]?.date}`" :curve-type="CurveType.MonotoneX"
         :legend-position="LegendPosition.Top" />
     </div>
     <div class="col-span-4">
-      <h2>环形图示例</h2>
+      <h2 class="heading-2">环形图示例</h2>
       <p class="text-gray-500">色彩分布</p>
       <BaseDonut :data="DonutData.map((i) => i.value)" :height="200" :labels="DonutData" :hide-pagination="true"
         :radius="0">
@@ -108,7 +108,7 @@ const columns = [
   <div class="grid grid-cols-12 gap-8 mb-8">
     <div class="col-span-5">
     <div class="space-y-2 mb-4">
-      <p class="text-gray-500 mb-1">Nuxt 实验室</p>
+      <h2 class="text-gray-500 mb-1">Nuxt 实验室</h2>
       <div class="flex items-center justify-between">
         <h2 class="text-xl dark:text-white font-bold">$75.1K</h2>
         <div class="flex items-center gap-2 text-sm">
@@ -131,19 +131,16 @@ const columns = [
     </div>
     <div class="col-span-7">
         <BaseStatus></BaseStatus>
-        <h2>高级可视化</h2>
+        <h2 class="heading-2">高级可视化</h2>
         <label>
           跟踪器、条形列表以及更多组件，可以优雅地可视化复杂的使用案例。
         </label>
     </div>
   </div>
-
+  <hr /><br />
   <div class="grid grid-cols-12 gap-4 mb-8">
     <div class="col-span-4 space-y-1">
-      <h2>状态数据</h2>
-      <label>
-        <hr />
-      </label>
+      <h2 class="heading-2">状态数据</h2>
         <BaseProgress color="#05DF72" label="已使用存储空间" value="1.85GB" :total="10" :progress="1.85" unit="GB">
         </BaseProgress>
         <BaseProgress color="#05DF72" label="周活跃用户数" value="250" :total="512" :progress="250">
@@ -152,7 +149,7 @@ const columns = [
         </BaseProgress>
     </div>
     <div class="col-span-8">
-      <h2>漂亮的柱状图</h2>
+      <h2 class="heading-2">漂亮的柱状图</h2>
       <label>
         跟踪器、条形列表以及更多组件，可以优雅地可视化复杂的使用案例。
       </label>

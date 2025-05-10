@@ -1,6 +1,6 @@
 ---
 layout: page
-title: DEMO
+title: MEDIA
 ---
 
 <script setup>
@@ -12,5 +12,7 @@ const count = ref(0)
 </script>
 
 ## MEDIA示例
+<div class="px-4 py-4">
 <AUDIO />
 <VIDEO />
+</div>

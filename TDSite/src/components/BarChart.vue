@@ -92,6 +92,7 @@ const RevenueCategoriesMultple = {
       <Card>
         <template #header>
           <h2 class="heading-2">垂直条形图</h2>
+          <p class="text-gray-500">Website visitors per device</p>
         </template>
         <BarChart :data="RevenueData" :height="250" :categories="RevenueCategoriesMultple" :y-axis="['desktop']"
           :radius="4" :x-formatter="(i: number): string => `${RevenueData[i]?.month}`" :y-formatter="(i: number) => i"
@@ -101,7 +102,7 @@ const RevenueCategoriesMultple = {
       <Card>
         <template #header>
           <h2 class="heading-2">水平条形图</h2>
-          <!-- <p class="text-gray-500">Website visitors per device</p> -->
+          <p class="text-gray-500">Website visitors per device</p>
         </template>
         <BarChart :data="RevenueData" :height="250" :categories="RevenueCategoriesMultple" :y-axis="['desktop']"
           :xNumTicks="6" :radius="4" :bar-padding="0" :orientation="Orientation.Horizontal"
@@ -112,7 +113,7 @@ const RevenueCategoriesMultple = {
       <Card>
         <template #header>
           <h2 class="heading-2">条形图组</h2>
-          <!-- <p class="text-gray-500">Website visitors per device</p> -->
+          <p class="text-gray-500">Website visitors per device</p>
         </template>
         <BarChart :data="RevenueData" :height="250" :categories="RevenueCategoriesMultple"
           :y-axis="['desktop', 'mobile']" :group-padding="0" :bar-padding="0.2" :radius="4"
@@ -123,7 +124,7 @@ const RevenueCategoriesMultple = {
       <Card>
         <template #header>
           <h2 class="heading-2">堆积条形图</h2>
-          <!-- <p class="text-gray-500">Website visitors per device</p> -->
+          <p class="text-gray-500">Website visitors per device</p>
         </template>
         <BarChart :data="RevenueData" :stacked="true" :height="250" :categories="RevenueCategoriesMultple"
           :y-axis="['desktop', 'mobile']" :group-padding="0" :bar-padding="0.2" :xNumTicks="6" :radius="4"
@@ -134,7 +135,7 @@ const RevenueCategoriesMultple = {
       <Card>
         <template #header>
           <h2 class="heading-2">垂直条形图</h2>
-          <!-- <p class="text-gray-500">Website visitors per device</p> -->
+          <p class="text-gray-500">Website visitors per device</p>
         </template>
         <BarChart :data="VisitorsData.slice(0, 6)" :height="250" :categories="VisitorsCartegories"
           :y-axis="['visitors']" :x-num-ticks="6" :radius="4"
@@ -145,7 +146,7 @@ const RevenueCategoriesMultple = {
       <Card>
         <template #header>
           <h2 class="heading-2">堆积水平条形图</h2>
-          <!-- <p class="text-gray-500">Website visitors per device</p> -->
+          <p class="text-gray-500">Website visitors per device</p>
         </template>
         <BarChart :data="RevenueData" :stacked="true" :height="250" :categories="RevenueCategoriesMultple"
           :y-axis="['desktop', 'mobile']" :group-padding="0" :bar-padding="0.2" :xNumTicks="6" :radius="4"
@@ -155,8 +156,13 @@ const RevenueCategoriesMultple = {
     </div>
 
     <div class="max-w-7xl mx-auto">
+      <h2 class="heading-2">柱状图</h2>
+      <p class="text-gray-500">Website visitors per device</p>
       <BarChart :data="RevenueDataLong" :height="358" :categories="RevenueCategories" :y-axis="['value']"
         :hide-legend="true" :y-formatter="(i: number) => i" :x-formatter="(i) => RevenueDataLong[i].date" />
     </div>
   </div>
 </template>
+<style lang="css">
+.heading-2 {font-weight:bolder; font-size: 2rem}
+</style>

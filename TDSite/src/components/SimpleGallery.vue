@@ -1,6 +1,6 @@
 <template>
-    <div class="grid grid-cols-4 gap-4 text-center justify-center" :id="galleryID">
-        <a class="border-green-400 border-4 px-2 py-2" v-for="(image, key) in imagesData" :key="key" :href="image.largeURL" :data-pswp-width="image.width"
+    <div class="w-full grid grid-cols-5 gap-4" :id="galleryID">
+        <a class="border-green-400 border-4 px-2 py-2 self-center" v-for="(image, key) in imagesData" :key="key" :href="image.largeURL" :data-pswp-width="image.width"
             :data-pswp-height="image.height" target="_blank" rel="noreferrer">
             <img :src="image.thumbnailURL" alt="" />
         </a>

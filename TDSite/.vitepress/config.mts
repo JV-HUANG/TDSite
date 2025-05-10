@@ -69,7 +69,8 @@ export default defineConfig({
           { text: 'CHARTS', link: '/charts' },
           { text: 'LIGHTBOX', link: '/lightbox' },
           { text: 'MEDIA', link: '/media' },
-          { text: 'GALLERY', link: '/gallery' }
+          { text: 'GALLERY', link: '/gallery' },
+          { text: 'DEMO', link: '/demo' }
         ]
       }
     ],
@@ -83,7 +84,8 @@ export default defineConfig({
           { text: 'CHARTS', link: '/charts' },
           { text: 'LIGHTBOX', link: '/lightbox' },
           { text: 'GALLERY', link: '/gallery' },
-          { text: 'MEDIA', link: '/media' }
+          { text: 'MEDIA', link: '/media' },
+          { text: 'DEMO', link: '/demo' }
         ]
       }
     ],

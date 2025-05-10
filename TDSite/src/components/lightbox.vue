@@ -1,74 +1,100 @@
 <template>
-<v-btn variant="tonal" @click="showMultiple">Show a group of pictures.</v-btn>
-<hr />
-<v-row class="flex w-auto justify-center">
-    <v-col v-for="(src, index) in imgsRef" 
-        :key="index"
-        @click="() => showImg(index)">
-        <img class="w-45" :src="src" />
-    </v-col>
-</v-row>
-<vue-easy-lightbox 
-    :visible="visibleRef" 
-    :imgs="imgsRef" 
-    :index="indexRef" 
-    @hide="onHide">
-</vue-easy-lightbox>
-<!-- <v-row>
-    <v-col v-for="n in 12" :key="n" cols="3">
-        <img class="w-12" :src="'https://picsum.photos/468/468?random='+n" />
-    </v-col>
-</v-row> -->
+  <div class="homepage-demo">
+    <div class="gallery">
+      <div
+        v-for="(img, idx) in imgs"
+        :key="idx"
+        class="pic"
+        @click="() => onShowClick(idx)"
+      >
+        <img :src="img.src ? img.src : img" />
+      </div>
+    </div>
+
+    <vue-easy-lightbox
+      :visible="visibleRef"
+      :index="imgIndexRef"
+      :imgs="imgs"
+      @hide="onHideClick"
+    />
+  </div>
 </template>
+
 <script>
-//
-// 如果 VueApp 已经通过 VueEasyLightbox 注册过了，那么这里就不需要再次注册了
+import { defineComponent, ref, onMounted } from 'vue'
 import VueEasyLightbox from 'vue-easy-lightbox'
-import { ref, defineComponent } from 'vue'
 
 export default defineComponent({
-    components: {
-        VueEasyLightbox
-    },
-    setup() {
-        const visibleRef = ref(false)
-        const indexRef = ref(0) // default 0
-        const imgsRef = ref([])
+  name: 'HomepageDemo',
+  components: {
+    VueEasyLightbox
+  },
+  setup() {
+    const imgIndexRef = ref(0)
+    const visibleRef = ref(false)
+    const imgs = [
+      {
+        title: "img's url: https://i.loli.net/2018/11/10/5be6852cdb002.jpeg",
+        src: ' https://i.loli.net/2018/11/10/5be6852cdb002.jpeg'
+      },
+      {
+        title: "There is img's description",
+        src: 'https://i.loli.net/2018/11/10/5be6852ce6965.jpeg'
+      },
+      'https://i.loli.net/2018/11/10/5be6852dec46e.jpeg'
+    ]
 
-        const onShow = () => {
-            visibleRef.value = true
-        }
-        const showMultiple = () => {
-            imgsRef.value = [
-                'https://picsum.photos/468/468?random=1',
-                'https://picsum.photos/468/468?random=2',
-                'https://picsum.photos/468/468?random=3',
-                'https://picsum.photos/468/468?random=4',
-                'https://picsum.photos/468/468?random=5',
-                'https://picsum.photos/468/468?random=6',
-                'https://picsum.photos/468/468?random=7',
-                'https://picsum.photos/468/468?random=8',
-                'https://picsum.photos/468/468?random=9'
-            ]
-            indexRef.value = 0 // index of imgList
-            onShow()
-        }
-        
-        const showImg = (index) => {
-            indexRef.value = index
-            visibleRef.value = true
-          }
-
-        const onHide = () => (visibleRef.value = false)
-
-        return {
-            visibleRef,
-            indexRef,
-            imgsRef,
-            showImg,
-            showMultiple,
-            onHide
-        }
+    const onShowClick = (index) => {
+      imgIndexRef.value = index
+      visibleRef.value = true
     }
+    const onHideClick = () => {
+      visibleRef.value = false
+    }
+
+    onMounted(() => {})
+
+    return {
+      imgIndexRef,
+      visibleRef,
+      imgs,
+      onShowClick,
+      onHideClick
+    }
+  }
 })
 </script>
+
+<style scoped lang="scss">
+.homepage-demo {
+  :deep(img.vel-img) {
+    max-width: 80vw;
+
+    @media screen and (max-width: 750px) {
+      max-width: 85vw;
+    }
+  }
+  .gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pic {
+    cursor: pointer;
+    margin: 4px;
+
+    img {
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+
+      @media screen and (min-width: 800px) {
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+}
+</style>

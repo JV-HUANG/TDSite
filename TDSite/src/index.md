@@ -13,7 +13,6 @@ hero:
 
 <!-- # {{ $frontmatter.title }} -->
 <COVER />
-<hr />
 <div class="flex w-full">
   <div class="w-auto flex-none" v-if="leftBar">
     <v-card variant="tonal" class="h-full mx-auto" elevation="16">
@@ -48,7 +47,7 @@ hero:
       <v-btn icon="$vuetify" variant="tonal" size="small">
       </v-btn>
   </div>
-  <div class="w-full">
+  <div class="w-full border-t-1 border-solid border-gray-500">
     <v-card variant="plain" class="h-full mx-auto" elevation="16">
     <v-card-text>
       <v-btn @click="awesome = !awesome" variant="tonal" prepend-icon="mdi-button-cursor">

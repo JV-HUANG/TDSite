@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 hello: world
 title: DEMO
 ---

@@ -14,7 +14,7 @@ const count = ref(0)
 const tab = ref(null)
 </script>
 
-<v-card>
+<v-card variant="text">
 <v-tabs v-model="tab" class="w-full" align-tabs="center">
     <v-tab :value="1"><v-icon icon="mdi-chart-bar" />柱状|条形图</v-tab>
     <v-tab :value="2"><v-icon icon="mdi-chart-areaspline-variant" />堆积区域图</v-tab>
