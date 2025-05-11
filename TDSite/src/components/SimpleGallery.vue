@@ -1,10 +1,18 @@
 <template>
-    <div class="w-full grid grid-cols-5 gap-4" :id="galleryID">
-        <a class="border-green-400 border-4 px-2 py-2 self-center" v-for="(image, key) in imagesData" :key="key" :href="image.largeURL" :data-pswp-width="image.width"
-            :data-pswp-height="image.height" target="_blank" rel="noreferrer">
+    <v-container class="w-full grid grid-cols-4 justify-items-center-safe" :id="galleryID">
+        <a class="my-2 border"
+            v-for="(image, key) in imagesData" 
+            :key="key" 
+            :href="image.largeURL" 
+            :data-pswp-width="image.width"
+            :data-pswp-height="image.height" 
+            target="_blank" 
+            rel="noreferrer">
+            <v-card variant="outlined">
             <img :src="image.thumbnailURL" alt="" />
+            </v-card>
         </a>
-    </div>
+    </v-container>
 </template>
 
 <script>

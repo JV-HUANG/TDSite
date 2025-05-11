@@ -65,38 +65,27 @@ const outages = ref([
 </script>
 
 <template>
-  <div
-    class=""
-  >
-    <div class="flex items-center justify-between p-4">
+  <div class="w-full">
+    <div class="flex items-center justify-between p-4 w-full">
       <div class="flex items-center gap-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
+        <svg xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-6 text-green-500"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-          />
+          class="size-6 text-green-500">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
         </svg>
-
         <span class="font-medium">{{ domain }}</span>
       </div>
       <span class="text-sm dark:text-gray-400">{{ uptime }}</span>
     </div>
-
     <div class="p-4">
-      <div
-        v-for="(outage, index) in outages"
-        :key="index"
+      <div v-for="(outage, index) in outages" :key="index"
         class="w-2.5 h-8 first:rounded-tl first:rounded-bl last:rounded-tr last:rounded-br ml-[3px] inline-block"
-        :class="outage.status === 'online' ? 'bg-green-500' : 'bg-white'"
-      ></div>
+        :class="outage.status === 'online' ? 'bg-green-500' : 'bg-white'">
+      </div>
     </div>
   </div>
 </template>

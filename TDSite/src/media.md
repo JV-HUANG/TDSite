@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: doc
 title: MEDIA
 ---
 
@@ -11,8 +11,6 @@ import AUDIO from './components/audio.vue'
 const count = ref(0)
 </script>
 
-## MEDIA示例
-<div class="px-4 py-4">
+# MEDIA示例
 <AUDIO />
 <VIDEO />
-</div>

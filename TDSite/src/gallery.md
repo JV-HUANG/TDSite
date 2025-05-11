@@ -5,6 +5,15 @@ title: DEMO
 ---
 
 <SimpleGallery galleryID="my-test-gallery" :images="images" />
+<br />
+<hr />
+<br />
+<center>
+<v-btn prepend-icon="mdi-keyboard-backspace" href="/" variant="plain">
+  BACK HOME
+</v-btn>
+</center>
+
 <script>
 import SimpleGallery from './components/SimpleGallery.vue';
 export default {

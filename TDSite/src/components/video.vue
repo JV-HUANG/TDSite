@@ -1,6 +1,6 @@
 <template>
-<div class="w-full">
-	<h2>video player</h2>
+<h1>video player</h1>
+<v-card class="w-full">
 	<vue-plyr :options="options">
 		<video controls crossorigin playsinline class="w-full"
 			data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
@@ -19,7 +19,7 @@
 			</a>
 		</video>
 	</vue-plyr>
-</div>
+</v-card>
 </template>
 <script>
 export default {

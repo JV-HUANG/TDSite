@@ -11,44 +11,57 @@ hero:
     alt: 21TD.COM
 ---
 
-<!-- # {{ $frontmatter.title }} -->
+<h1># {{ $frontmatter.title }}</h1>
 <COVER />
 <div class="flex w-full">
   <div class="w-auto flex-none" v-if="leftBar">
-    <v-card variant="tonal" class="h-full mx-auto" elevation="16">
-      <v-toolbar class="text-white" image="../../assets/img/bg.png">
-        <v-btn icon="mdi-menu"></v-btn>
+    <v-card variant="text" class="h-full mx-auto rounded-0" elevation="16">
+      <v-toolbar>
         <v-toolbar-title text="Toolbar"></v-toolbar-title>
         <v-btn icon="mdi-arrow-left-box" @click="leftBar = false"></v-btn>
       </v-toolbar>
-      <v-card-item>
-        <v-card-title>
-          Vuetify 
-        </v-card-title>
-        <v-card-subtitle>
-          Vue 组件框架示例
-        </v-card-subtitle>
-      </v-card-item>
       <v-card-text>
-        .........
+        <v-list-item link title="List Item 1"></v-list-item>
+        <v-list-item link title="List Item 2"></v-list-item>
+        <v-list-item link title="List Item 3"></v-list-item>
+        <v-list-item link title="List Item 4"></v-list-item>
+        <v-list-item link title="List Item 5"></v-list-item>
+        <v-list-item link title="List Item 6"></v-list-item>
       </v-card-text>
-      <v-card-subtitle>    
-        设备的网站访问者数量
-      </v-card-subtitle>
     </v-card>
   </div>
   <div class="w-min flex-none grid content-start justify-center text-center" v-else>
-      <v-btn icon="mdi-arrow-right-box" variant="tonal" @click="leftBar = !leftBar" size="small"></v-btn>
-      <hr />
-      <v-btn icon="$vuetify" variant="tonal" size="small">
-      </v-btn>
-      <v-btn icon="$vuetify" variant="tonal" size="small">
-      </v-btn>
-      <v-btn icon="$vuetify" variant="tonal" size="small">
-      </v-btn>
+      <v-toolbar>
+        <v-btn icon="mdi-arrow-right-box" @click="leftBar = !leftBar" size="small"></v-btn>
+      </v-toolbar>
+      <div class="h-full rounded-0 my-2" elevation="16">
+        <v-btn icon="mdi-alert-circle-outline" size="small"></v-btn>
+        <v-btn icon="mdi-alert-circle-outline" size="small"></v-btn>
+        <v-btn icon="mdi-alert-circle-outline" size="small"></v-btn>
+      </div>
   </div>
-  <div class="w-full border-t-1 border-solid border-gray-500">
-    <v-card variant="plain" class="h-full mx-auto" elevation="16">
+  <div class="w-full">
+    <v-card variant="text" class="h-full mx-auto rounded-0" elevation="16">
+    <v-toolbar>
+      <v-btn icon="mdi-menu"></v-btn>
+      <v-toolbar-title text="Toolbar"></v-toolbar-title>
+      <v-menu location="start">
+        <template v-slot:activator="{ props: menu }">
+          <v-tooltip location="right">
+            <template v-slot:activator="{ props: tooltip }">
+              <v-btn icon="mdi-list-box" variant="plain" v-bind="mergeProps(menu, tooltip)">
+              </v-btn>
+            </template>
+            <span>I'm A Tooltip</span>
+          </v-tooltip>
+        </template>
+        <v-list>
+          <v-list-item v-for="(item, index) in items" :key="index" :value="index">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-toolbar>
     <v-card-text>
       <v-btn @click="awesome = !awesome" variant="tonal" prepend-icon="mdi-button-cursor">
         MDI ICON Toggle Example
@@ -69,4 +82,12 @@ import BaseLine from './components/BaseLine.vue'
 import { ref } from 'vue'
 const leftBar = ref(true)
 const awesome = ref(true)
+
+import { mergeProps } from 'vue'
+const items = [
+  { title: 'Click Me 1' },
+  { title: 'Click Me 2' },
+  { title: 'Click Me 3' },
+  { title: 'Click Me 4' },
+]
 </script>
