@@ -1,6 +1,6 @@
 <template>
 	<v-card class="w-full h-full"  variant="text">
-		<v-data-iterator :items="games" :items-per-page="3" :search="search">
+		<v-data-iterator :items="games" :items-per-page="6" :search="search">
 			<template v-slot:header>
 				<div class="px-2 py-2">
 					<v-text-field v-model="search" density="comfortable" placeholder="Search"

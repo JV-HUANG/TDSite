@@ -70,6 +70,7 @@ export default defineConfig({
           { text: 'LIGHTBOX', link: '/lightbox' },
           { text: 'MEDIA', link: '/media' },
           { text: 'GALLERY', link: '/gallery' },
+          { text: 'constrained', link: '/constrained' },
           { text: 'DEMO', link: '/demo' }
         ]
       }

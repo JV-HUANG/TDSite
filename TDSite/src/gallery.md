@@ -1,13 +1,12 @@
 ---
-layout: page
+layout: home
 hello: world
 title: DEMO
 ---
 
 <SimpleGallery galleryID="my-test-gallery" :images="images" />
-<br />
+
 <hr />
-<br />
 <center>
 <v-btn prepend-icon="mdi-keyboard-backspace" href="/" variant="plain">
   BACK HOME

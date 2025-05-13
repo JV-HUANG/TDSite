@@ -1,6 +1,5 @@
 <template>
 <div class="w-full">
-	<h1>audio player</h1>
 	<vue-plyr>
 		<audio controls crossorigin playsinline class="w-full">
 			<source src="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3"

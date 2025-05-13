@@ -17,73 +17,54 @@ import {
 </script>
 
 <template>
-  <div class="space-y-8 pb-24 pt-8">
-    <div class="max-w-7xl mx-auto space-y-4">
-      <div class="mb-8 space-y-4">
-        <h1 class="heading-2">堆积区域图</h1>
-        <p class="text-lg font-medium text-gray-500">
-          折线图，包含连接数据点的线条以及线条与 x 轴之间的阴影区域。
-        </p>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 max-w-7xl mx-auto py-4">
-      <Card>
-        <template #header>
-          <h2 class="heading-2">区域图（多线）</h2>
-          <p class="text-gray-500">Website visitors per device</p>
-        </template>
+  <div class="pb-4 pt-4">
+    <h1>堆积区域图</h1>
+    <label>
+      折线图，包含连接数据点的线条以及线条与 x 轴之间的阴影区域。
+    </label>
+    <div class="grid grid-cols-2 gap-4 mx-auto">
+      <v-card variant="outlined" class="px-2 py-2">
+        <h1>区域图（多线）</h1>
+        <p>Website visitors per device</p>
         <AreaChart :data="AreaChartData1" :height="200" y-label="Number of visits" :categories="categories1"
           :x-num-ticks="3" :x-formatter="(i: number) => AreaChartData1[i].date" :y-num-ticks="3"
           :curve-type="CurveType.MonotoneX" :legend-position="LegendPosition.Top" />
-      </Card>
-
-      <Card>
-        <template #header>
-          <h2 class="heading-2">单线区域图</h2>
-          <p class="text-gray-500">Website visitors per device</p>
-        </template>
+      </v-card>
+      <v-card variant="outlined" class="px-2 py-2">
+        <h1>单线区域图</h1>
+        <p>Website visitors per device</p>
         <AreaChart :data="AreaChartData2" :height="200" x-label="Time" y-label="Temperature" :categories="categories2"
           :y-num-ticks="4" :x-num-ticks="7" :x-formatter="(i: number) => AreaChartData2[i].hour"
           :curve-type="CurveType.Basis" />
-      </Card>
-
-      <Card>
-        <template #header>
-          <h2 class="heading-2">堆积面积图</h2>
-          <p class="text-gray-500">Website visitors per device</p>
-        </template>
+      </v-card>
+      <v-card variant="outlined" class="px-2 py-2">
+        <h1>堆积面积图</h1>
+        <p>Website visitors per device</p>
         <AreaStackedChart :height="200" :data="AreaChartData3" :categories="categories4" />
-      </Card>
+      </v-card>
 
-      <Card>
-        <template #header>
-          <h2 class="heading-2">自然区域图</h2>
-          <p class="text-gray-500">Website visitors per device</p>
-        </template>
+      <v-card variant="outlined" class="px-2 py-2">
+        <h1>自然区域图</h1>
+        <p>Website visitors per device</p>
         <AreaChart :data="AreaChartData4" :height="200" x-label="Month" y-label="Score" :categories="categories5"
           :y-num-ticks="4" :x-num-ticks="7" :x-formatter="(i: number) => AreaChartData4[i].month"
           :curve-type="CurveType.Natural" />
-      </Card>
+      </v-card>
 
-      <Card>
-        <template #header>
-          <h2 class="heading-2">区域图阶梯型</h2>
-          <p class="text-gray-500">Website visitors per device</p>
-        </template>
+      <v-card variant="outlined" class="px-2 py-2">
+        <h1>区域图阶梯型</h1>
+        <p>Website visitors per device</p>
         <AreaChart :data="AreaChartData4" :height="200" x-label="Month" y-label="Score" :categories="categories5"
           :y-num-ticks="4" :x-num-ticks="7" :x-formatter="(i: number) => AreaChartData4[i].month"
           :curve-type="CurveType.Step" />
-      </Card>
+      </v-card>
 
-      <Card>
-        <template #header>
-          <h2 class="heading-2">区域图默认设置</h2>
-          <p class="text-gray-500">Website visitors per device</p>
-        </template>
+      <v-card variant="outlined" class="px-2 py-2">
+        <h1>区域图默认设置</h1>
+        <p>Website visitors per device</p>
         <AreaChart :data="AreaChartData4" :height="200" x-label="Month" y-label="Score" :categories="categories5"
           :y-num-ticks="4" :x-num-ticks="7" :x-formatter="(i: number) => AreaChartData4[i].month" />
-      </Card>
+      </v-card>
     </div>
   </div>
 </template>

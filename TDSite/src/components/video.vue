@@ -1,5 +1,4 @@
 <template>
-<h1>video player</h1>
 <v-card class="w-full">
 	<vue-plyr :options="options">
 		<video controls crossorigin playsinline class="w-full"

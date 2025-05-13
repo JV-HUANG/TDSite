@@ -1,23 +1,36 @@
 <template>
-  <div class="homepage-demo">
-    <div class="gallery">
-      <div
-        v-for="(img, idx) in imgs"
-        :key="idx"
-        class="pic"
-        @click="() => onShowClick(idx)"
-      >
-        <img :src="img.src ? img.src : img" />
-      </div>
-    </div>
 
-    <vue-easy-lightbox
-      :visible="visibleRef"
-      :index="imgIndexRef"
-      :imgs="imgs"
-      @hide="onHideClick"
-    />
-  </div>
+  <v-breadcrumbs class="my-0 mx-2 px-0 py-0" :items="breadcrumbs">
+    <template v-slot:divider>
+      <v-icon icon="mdi-chevron-right"></v-icon>
+    </template>
+  </v-breadcrumbs>
+  <v-container>
+    <v-row>
+      <v-col cols="2">
+        <v-sheet rounded="lg">
+          <v-list rounded="lg">
+            <v-list-item v-for="n in 5" :key="n" :title="`List Item ${n}`" link></v-list-item>
+            <v-divider class="my-2"></v-divider>
+            <v-list-item color="grey-lighten-4" title="Refresh" link></v-list-item>
+          </v-list>
+        </v-sheet>
+      </v-col>
+      <v-col>
+        <v-sheet rounded="lg" min-height="70vh">
+          <!--  -->
+          <div class="homepage-demo">
+            <div class="gallery">
+              <div v-for="(img, idx) in imgs" :key="idx" class="pic" @click="() => onShowClick(idx)">
+                <img :src="img.src ? img.src : img" />
+              </div>
+            </div>
+            <vue-easy-lightbox :visible="visibleRef" :index="imgIndexRef" :imgs="imgs" @hide="onHideClick"/>
+          </div>
+        </v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -52,6 +65,25 @@ export default defineComponent({
       visibleRef.value = false
     }
 
+    ////////////////////////////////////
+    const breadcrumbs = [
+      {
+        title: 'HOME',
+        disabled: false,
+        href: '/',
+      },
+      {
+        title: 'LIGHTBOX',
+        disabled: false,
+        href: '/lightbox',
+      },
+      {
+        title: 'MORE',
+        disabled: true,
+        href: '#',
+      },
+    ]
+    /////////////////////////////////////
     onMounted(() => {})
 
     return {
@@ -59,7 +91,8 @@ export default defineComponent({
       visibleRef,
       imgs,
       onShowClick,
-      onHideClick
+      onHideClick,
+      breadcrumbs
     }
   }
 })
