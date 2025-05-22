@@ -60,9 +60,11 @@ export default defineConfig({
     // siteTitle: false,//显示站点标题
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '首页', link: '/' },
+      { text: 'HOME', link: '/' },
+      { text: 'SITE', link: '/TDSite' },
+      { text: 'DESKTOP', link: '/TDStart' },
       {
-        text: '示例',
+        text: 'EXAMPLES',
         items: [
           { text: 'markdown', link: '/markdown-examples' },
           { text: 'API', link: '/api-examples' },

@@ -1,13 +1,7 @@
 <template>
-  <v-breadcrumbs class="my-2 mx-2 px-0 py-0" :items="breadcrumbs">
-    <template v-slot:divider>
-      <v-icon icon="mdi-chevron-right"></v-icon>
-    </template>
-  </v-breadcrumbs>
-  
   <v-container>
-    <v-row class="d-flex mb-6 bg-grey-darken-4">
-      <v-col class="w-auto ma-2 pa-2" cols="12" md="3" v-if="leftBar">
+    <v-row class="flex-nowrap bg-grey-darken-4" no-gutters>
+      <v-col class="flex-grow-0 flex-shrink-0" cols="3" v-if="leftBar">
         <v-list>
           <v-list-item prepend-avatar="./assets/img/logo.png" subtitle="jianwe@live.com" title="JV HUANG">
             <template v-slot:append>
@@ -15,60 +9,41 @@
             </template>
           </v-list-item>
         </v-list>
-        <v-expansion-panels>
-          <v-expansion-panel class="rounded-0" title="Title"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
-          </v-expansion-panel>
-        </v-expansion-panels>
         <v-list :lines="false" density="compact" nav>
           <v-list-item v-for="(item, i) in items" :key="i" :value="item" color="green">
             <template v-slot:prepend>
               <v-icon :icon="item.icon" size="small"></v-icon>
             </template>
-            <v-list-item-title v-text="item.text"></v-list-item-title>
+            <a :href="item.href">
+              <v-list-item-title v-text="item.text">
+              </v-list-item-title>
+            </a>
           </v-list-item>
         </v-list>
       </v-col>
-      <v-col class="w-auto ma-2 pa-2 align-self-auto">
+      <v-col class="flex-grow-1 flex-shrink-0" cols="1" style="min-width: 100px; max-width: 100%;">
         <!--  -->
         <v-toolbar>
           <template v-slot:prepend>
             <v-btn icon="mdi-dock-left" @click="leftBar = !leftBar"></v-btn>
+            <v-breadcrumbs class="my-2 mx-2 px-0 py-0" :items="breadcrumbs">
+              <template v-slot:divider>
+                <v-icon icon="mdi-chevron-right"></v-icon>
+              </template>
+              {{ currentPath }}
+            </v-breadcrumbs>
           </template>
           <v-btn class="ms-5" icon="mdi-archive-plus-outline"></v-btn>
           <v-btn icon="mdi-alert-circle-outline"></v-btn>
           <v-btn icon="mdi-delete-outline"></v-btn>
           <template v-if="$vuetify.display.smAndUp">
-            <v-divider class="mx-3 align-self-center" length="24" thickness="2" vertical>
-            </v-divider>
+            <v-divider class="mx-3 align-self-center" length="24" thickness="2" vertical></v-divider>
             <v-btn icon="mdi-folder-outline"></v-btn>
             <v-btn icon="mdi-tag-outline"></v-btn>
             <v-btn icon="mdi-dots-vertical"></v-btn>
           </template>
         </v-toolbar>
-        <v-card variant="tonal" class="mx-auto">
-          <v-card-text>
-              <v-container>
-                <v-row justify="space-around">
-                  <v-col v-for="elevation in elevations" :key="elevation" cols="12" md="4">
-                    <v-sheet class="pa-9" color="grey-lighten-3">
-                      <v-sheet :elevation="elevation" class="mx-auto" height="45" width="45"></v-sheet>
-                    </v-sheet>
-                  </v-col>
-                </v-row>
-              </v-container>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col class="ma-2 pa-2" cols="12" md="2">
-        <v-card variant="tonal" class="self-auto mx-auto" prepend-icon="mdi-auto-fix" title="Card title">
-          <v-card-text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          </v-card-text>
-          <v-card-actions>
-            <v-btn>Click me</v-btn>
-          </v-card-actions>
-        </v-card>
+        <component :is="currentView" />
       </v-col>
     </v-row>
   </v-container>
@@ -78,10 +53,11 @@ import { ref } from 'vue'
 const leftBar = ref(true)
 
 const items = [
-  { text: 'My Files', icon: 'mdi-folder' },
-  { text: 'Shared with me', icon: 'mdi-account-multiple' },
-  { text: 'Starred', icon: 'mdi-star' },
-  { text: 'Recent', icon: 'mdi-history' },
+  { text: 'INDEX', icon: 'mdi-home', href: '#/demo' },
+  { text: 'LIGHTBOX', icon: 'mdi-folder', href: '#/lightbox' },
+  { text: 'BASELINE', icon: 'mdi-account-multiple', href: '#/baseline' },
+  { text: 'BARCHART', icon: 'mdi-star', href: '#/barchart' },
+  { text: 'AREACHART', icon: 'mdi-history', href: '#/areachart' },
   { text: 'Offline', icon: 'mdi-check-circle' },
   { text: 'Uploads', icon: 'mdi-upload' },
   { text: 'Backups', icon: 'mdi-cloud-upload' },
@@ -94,18 +70,47 @@ const breadcrumbs = [
     href: '/',
   },
   {
-    title: 'GALLERY',
-    disabled: false,
-    href: '/gallery',
-  },
-  {
     title: 'constrained',
-    disabled: true,
+    disabled: false,
     href: '/constrained',
   },
 ]
 
 
-const elevations = [0, 4, 8, 12, 16, 20]
 
+</script>
+
+<script>
+import DEMO from './demo.vue'
+import LIGHTBOX from './lightbox.vue'
+import BASELINE from './BaseLine.vue'
+import BARCHART from './BarChart.vue'
+import AREACHART from './AreaChart.vue'
+import NotFound from './video.vue'
+
+const routes = {
+  '/demo': DEMO,
+  '/lightbox': LIGHTBOX,
+  '/baseline': BASELINE,
+  '/barchart': BARCHART,
+  '/areachart': AREACHART
+}
+
+export default {
+  data() {
+    return {
+      currentPath: window.location.hash
+    }
+  },
+  computed: {
+    currentView() {
+      return routes[this.currentPath.slice(1) || '/demo'] || NotFound
+    }
+  },
+  mounted() {
+    window.addEventListener('hashchange', () => {
+      this.currentPath = window.location.hash
+    })
+  }
+}
 </script>

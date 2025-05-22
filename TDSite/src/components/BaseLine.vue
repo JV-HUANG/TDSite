@@ -77,7 +77,7 @@ const columns = [
 ];
 </script>
 <template>
-  <div class="grid grid-cols-12 gap-4 mb-4">
+  <div class="grid grid-cols-12 gap-4 px-2 py-2">
     <v-card variant="outlined" class="px-2 py-2 col-span-9">
       <h1>多重折线图</h1>
       <p>设备的网站访问者数量</p>
