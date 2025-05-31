@@ -66,14 +66,15 @@ export default defineConfig({
       {
         text: 'EXAMPLES',
         items: [
-          { text: 'markdown', link: '/markdown-examples' },
-          { text: 'API', link: '/api-examples' },
-          { text: 'CHARTS', link: '/charts' },
-          { text: 'LIGHTBOX', link: '/lightbox' },
-          { text: 'MEDIA', link: '/media' },
-          { text: 'GALLERY', link: '/gallery' },
-          { text: 'constrained', link: '/constrained' },
-          { text: 'DEMO', link: '/demo' }
+          { text: 'MARKDOWN', link: '/markdown-examples' },
+          { text: 'RUNTIME API', link: '/api-examples' },
+          { text: 'VUE CHARTS', link: '/charts' },
+          { text: 'LIGHT BOX', link: '/lightbox' },
+          { text: 'MEDIA PLAYER', link: '/media' },
+          { text: 'PHOTO SWIPE', link: '/gallery' },
+          { text: 'Controllable Props', link: '/controllableProps' },
+          { text: 'DYNAMIC TABS', link: '/dynamicTabs' },
+          { text: 'VIME PLAYER', link: '/vimePlayer' }
         ]
       }
     ],
@@ -82,13 +83,15 @@ export default defineConfig({
       {
         text: '侧边栏',
         items: [
-          { text: 'Markdown', link: '/markdown-examples' },
-          { text: 'Runtime API', link: '/api-examples' },
-          { text: 'CHARTS', link: '/charts' },
-          { text: 'LIGHTBOX', link: '/lightbox' },
-          { text: 'GALLERY', link: '/gallery' },
-          { text: 'MEDIA', link: '/media' },
-          { text: 'DEMO', link: '/demo' }
+          { text: 'MARKDOWN', link: '/markdown-examples' },
+          { text: 'RUNTIME API', link: '/api-examples' },
+          { text: 'VUE CHARTS', link: '/charts' },
+          { text: 'LIGHT BOX', link: '/lightbox' },
+          { text: 'MEDIA PLAYER', link: '/media' },
+          { text: 'PHOTO SWIPE', link: '/gallery' },
+          { text: 'Controllable Props', link: '/controllableProps' },
+          { text: 'DYNAMIC TABS', link: '/dynamicTabs' },
+          { text: 'VIME PLAYER', link: '/vimePlayer' }
         ]
       }
     ],

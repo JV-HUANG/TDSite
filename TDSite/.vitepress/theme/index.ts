@@ -9,7 +9,10 @@ import * as directives from 'vuetify/directives'
 import { createVuetify } from 'vuetify'
 import 'vuetify/dist/vuetify.min.css' // 引入默认样式
 import '@mdi/font/css/materialdesignicons.css' // 引入 Material Design Icons 的 CSS
-
+// Default theme. ~960B
+import '@vime/core/themes/default.css';
+// Optional light theme (extends default). ~400B
+import '@vime/core/themes/light.css';
 
 const vuetify = createVuetify({ 
   components, 

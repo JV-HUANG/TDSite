@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import Card from "../elements/Card.vue";
+import Card from "../../elements/Card.vue";
 
-import { AreaChart, AreaStackedChart } from "../../lib";
-import { CurveType, LegendPosition } from "../../lib/types";
+import { AreaChart, AreaStackedChart } from "../../../lib";
+import { CurveType, LegendPosition } from "../../../lib/types";
 
 import {
   AreaChartData1,
@@ -13,7 +13,7 @@ import {
   categories2,
   categories4,
   categories5,
-} from ".././data/AreaChartData";
+} from "../../data/AreaChartData";
 </script>
 
 <template>

@@ -1,16 +1,17 @@
 <template>
-    <!--  -->
-    <v-container class="w-full grid grid-cols-4 justify-items-center-safe" :id="galleryID">
-        <a class="my-2 border"
-            v-for="(image, key) in imagesData" 
+    <v-container class="columns-4 gap-4" :id="galleryID">
+        <a v-for="(image, key) in imagesData" 
             :key="key" 
             :href="image.largeURL" 
             :data-pswp-width="image.width"
             :data-pswp-height="image.height" 
             target="_blank" 
             rel="noreferrer">
-            <v-card variant="outlined" class="mx-2 my-2 px-4 py-4 gap-4">
-            <img :src="image.thumbnailURL" alt="" />
+            <v-card variant="text" class="mx-auto rounded-0 py-4 px-4 gap-4 w-100">
+                <img :width="320" :src="image.thumbnailURL" :title="image.largeURL" />
+                <v-card-title class="text-subtitle-2 bg-blue-grey-darken-4">
+                    {{ image.width }} x {{ image.height }}
+                </v-card-title>
             </v-card>
         </a>
     </v-container>

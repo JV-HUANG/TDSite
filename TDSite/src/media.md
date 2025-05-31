@@ -12,7 +12,9 @@ const count = ref(0)
 </script>
 
 # MEDIA示例
-## audio player
-<AUDIO />
-## video player
+
+## VIDEO PLAYER
 <VIDEO />
+
+## AUDIO PLAYER
+<AUDIO />

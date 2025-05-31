@@ -1,15 +1,15 @@
 ---
-layout: home
-hello: world
-title: DEMO
+layout: page
+title: GALLERY
 ---
+
+# PHOTO SWIPE GALLERY
 
 <SimpleGallery galleryID="my-test-gallery" :images="images" />
 
-<hr />
 <center>
-<v-btn prepend-icon="mdi-keyboard-backspace" href="/" variant="plain">
-  BACK HOME
+<v-btn prepend-icon="mdi-keyboard-backspace" href="/" variant="tonal">
+  返回首页
 </v-btn>
 </center>
 
@@ -52,6 +52,31 @@ export default {
           largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg',
           thumbnailURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg',
           width: 2500, height: 1666,
+        },
+        {
+          largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg',
+          thumbnailURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg',
+          width: 2500, height: 1666,
+        },
+        {
+          largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/4/img-2500.jpg',
+          thumbnailURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/4/img-200.jpg',
+          width: 1875, height: 2500,
+        },
+        {
+          largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg',
+          thumbnailURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-200.jpg',
+          width: 1669, height: 2500,
+        },
+        {
+          largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg',
+          thumbnailURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg',
+          width: 2500, height: 1666,
+        },
+        {
+          largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg',
+          thumbnailURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-200.jpg',
+          width: 1669, height: 2500,
         },
       ],
     };

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { BarChart } from "../../lib";
+import { BarChart } from "../../../lib";
 
-import Card from ".././elements/Card.vue";
+import Card from "../.././elements/Card.vue";
 
-import { VisitorsData, VisitorsCartegories } from "../data/VisitorsData";
+import { VisitorsData, VisitorsCartegories } from "../../data/VisitorsData";
 
-import { LegendPosition, Orientation } from "../../lib";
+import { LegendPosition, Orientation } from "../../../lib";
 
 const RevenueData = [
   { month: "January", desktop: 186, mobile: 80 },

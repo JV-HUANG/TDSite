@@ -13,10 +13,14 @@
 					<v-row dense>
 						<v-col v-for="item in items" :key="item.title" cols="auto" md="4">
 							<v-card class="pb-3" border flat>
-								<v-img :src="item.raw.img"></v-img>
+								<a :href="item.raw.img" target="_blank">
+									<v-img :src="item.raw.img"></v-img>
+								</a>
 								<v-list-item :subtitle="item.raw.subtitle" class="mb-2">
 									<template v-slot:title>
-										<strong class="text-h6 mb-2">{{ item.raw.title }}</strong>
+										<strong class="text-h6 mb-2">
+											{{ item.raw.title }}
+										</strong>
 									</template>
 								</v-list-item>
 								<div class="d-flex justify-space-between px-4">
@@ -24,7 +28,12 @@
 										<v-icon icon="mdi-clock" start></v-icon>
 										<div class="text-truncate">{{ item.raw.duration }}</div>
 									</div>
-									<v-btn class="text-none" size="small" text="Read" border>
+									<v-btn prepend-icon="mdi-folder-multiple-image" 
+										:href="item.raw.img" 
+										target="_blank" 
+										variant="plain" 
+										size="small" 
+										text="BROWSER" border>
 									</v-btn>
 								</div>
 							</v-card>

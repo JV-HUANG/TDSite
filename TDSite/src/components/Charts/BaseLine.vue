@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Status as BaseStatus } from "../components/Status";
-import { Progress as BaseProgress } from "../components/Progress";
+import { Status as BaseStatus } from "../Status";
+import { Progress as BaseProgress } from "../Progress";
 
 import {
   LineChart as BaseLine,
@@ -8,20 +8,20 @@ import {
   AreaChart as BaseArea,
   DonutChart as BaseDonut,
   LegendPosition,
-} from "../../lib";
+} from "../../../lib";
 
-import Card from "../elements/Card.vue";
-import Table from "../elements/Table.vue";
+import Card from "../../elements/Card.vue";
+import Table from "../../elements/Table.vue";
 
 import { h } from "vue";
 import { CurveType } from "@unovis/ts";
-import { InvestmentData, categories } from "../data/InvestmentData";
+import { InvestmentData, categories } from "../../data/InvestmentData";
 
 import {
   RevenueData,
   RevenueDataSmall,
   categories as RevenueCategories,
-} from "../data/RevenueData";
+} from "../../data/RevenueData";
 
 const DonutData = [
   {
@@ -77,7 +77,7 @@ const columns = [
 ];
 </script>
 <template>
-  <div class="grid grid-cols-12 gap-4 px-2 py-2">
+  <div class="grid grid-cols-12 gap-4 my-4">
     <v-card variant="outlined" class="px-2 py-2 col-span-9">
       <h1>多重折线图</h1>
       <p>设备的网站访问者数量</p>
