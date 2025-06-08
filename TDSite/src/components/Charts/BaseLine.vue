@@ -78,15 +78,15 @@ const columns = [
 </script>
 <template>
   <div class="grid grid-cols-12 gap-4 my-4">
-    <v-card variant="outlined" class="px-2 py-2 col-span-9">
-      <h1>多重折线图</h1>
+    <v-card variant="plain" class="px-2 py-2 col-span-9">
+      <label class="text-h4">多重折线图</label>
       <p>设备的网站访问者数量</p>
       <BaseLine :data="InvestmentData" :height="322" :categories="categories" :y-num-ticks="8" :x-tick-line="false"
         :x-formatter="(i: number): string => `${InvestmentData[i]?.date}`" :curve-type="CurveType.MonotoneX"
         :legend-position="LegendPosition.Top" />
     </v-card>
-    <v-card variant="outlined" class="px-2 py-2 col-span-3">
-      <h1>环形图示例</h1>
+    <v-card variant="plain" class="px-2 py-2 col-span-3">
+      <label class="text-h4">环形图示例</label>
       <p>色彩分布</p>
       <BaseDonut :data="DonutData.map((i) => i.value)" :height="200" :labels="DonutData" :hide-pagination="true" :radius="0">
         <div class="absolute text-center">
@@ -112,9 +112,9 @@ const columns = [
     </v-card>
   </div>
   <div class="grid grid-cols-12 gap-4">
-    <v-card variant="outlined" class="px-2 py-2 col-span-5">
+    <v-card variant="plain" class="px-2 py-2 col-span-5">
       <div class="space-y-2 mb-4">
-        <h1>Nuxt 实验室</h1>
+        <label class="text-h4">Nuxt 实验室</label>
         <div class="flex items-center justify-between">
           <label class="text-hl dark:text-white font-bold">$75.1K</label>
           <div class="flex items-center gap-2 text-sm">
@@ -134,15 +134,15 @@ const columns = [
         </svg>
       </div>
     </v-card>
-    <v-card variant="outlined" class="px-2 py-2 col-span-7">
-      <h1>高级可视化</h1>
+    <v-card variant="plain" class="px-2 py-2 col-span-7">
+      <label class="text-h4">高级可视化</label>
       <p>跟踪器、条形列表以及更多组件，可以优雅地可视化复杂的使用案例。</p>
       <BaseStatus />
     </v-card>
   </div>
   <div class="grid grid-cols-12 gap-4 my-4">
-    <v-card variant="outlined" class="px-2 py-2 col-span-4 space-y-1">
-      <h1>状态数据</h1>
+    <v-card variant="plain" class="px-2 py-2 col-span-4 space-y-1">
+      <label class="text-h4">状态数据</label>
         <BaseProgress color="#05DF72" label="已使用存储空间" value="1.85GB" :total="10" :progress="1.85" unit="GB">
         </BaseProgress>
         <BaseProgress color="#05DF72" label="周活跃用户数" value="250" :total="512" :progress="250">
@@ -150,8 +150,8 @@ const columns = [
         <BaseProgress color="#05DF72" label="当前成本" value="$293.5" :total="300" :progress="293.5">
         </BaseProgress>
     </v-card>
-    <v-card variant="outlined" class="px-2 py-2 col-span-8">
-      <h1>漂亮的柱状图</h1>
+    <v-card variant="plain" class="px-2 py-2 col-span-8">
+      <label class="text-h4">漂亮的柱状图</label>
       <p>跟踪器、条形列表以及更多组件，可以优雅地可视化复杂的使用案例。</p>
       <BaseBar :data="RevenueData" :height="306" :categories="RevenueCategories" :y-axis="['value']"
         :hide-legend="true" :minMaxTicksOnly="true" :y-formatter="(i: number) => i"

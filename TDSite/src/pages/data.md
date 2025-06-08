@@ -1,16 +1,14 @@
 ---
 layout: page
 hello: world
-title: LIGHTBOX PAGE
+title: DATA PAGE
 ---
 
 <script setup>
 import { ref } from 'vue'
 
-import LIGHTBOX from './components/lightbox.vue'
+import DATA from './data.vue'
 const count = ref(0)
 </script>
 
-# LIGHTBOX PAGEME
-
-<LIGHTBOX />
+<DATA />

@@ -1,6 +1,6 @@
 <template>
-  <v-card class="mr-9 my-2">
-    <v-toolbar>
+  <v-card variant="text" class="my-2 mr-9">
+    <v-toolbar color="primary" image="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title>PAGE TITLE</v-toolbar-title>
       <v-btn icon="mdi-tab-minus" :disabled="!length" @click="length--"></v-btn>
@@ -8,37 +8,34 @@
       <v-btn icon="mdi-magnify"></v-btn>
       <v-btn icon="mdi-dots-vertical"></v-btn>
       <template v-slot:extension>
-        <v-tabs slider-color="teal-lighten-3" show-arrows v-model="model" align-tabs="center">
+        <v-tabs show-arrows v-model="model" align-tabs="center">
           <v-tab v-for="i in length" :key="i" :text="`Item ${i}`" :value="i"></v-tab>
         </v-tabs>
       </template>
     </v-toolbar>
-
     <v-tabs-window v-model="model">
       <v-tabs-window-item v-for="i in length" :key="i" :value="i">
-        <v-card variant="elevated">
-          <v-card-text>
-            <v-container fluid>
-              <h2>{{i}} - {{ text }}</h2>
-              <br />
-              <v-row dense>
-                <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                  <v-card variant="plain">
-                    <v-img :src="card.src" class="align-end" height="300" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" cover>
-                      <v-card-title class="text-white" v-text="card.title"></v-card-title>
-                    </v-img>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn variant="text" icon="mdi-heart" size="small"></v-btn>
-                      <v-btn variant="text" icon="mdi-bookmark" size="small"></v-btn>
-                      <v-btn variant="text" icon="mdi-share-variant" size="small"></v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-card-text>
-        </v-card>
+        <v-card-text>
+          <v-container fluid>
+            <h2>{{i}} - {{ text }}</h2>
+            <br />
+            <v-row dense>
+              <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
+                <v-card variant="plain">
+                  <v-img :src="card.src" class="align-end" height="300" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" cover>
+                    <v-card-title class="text-white" v-text="card.title"></v-card-title>
+                  </v-img>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn variant="text" icon="mdi-heart" size="small"></v-btn>
+                    <v-btn variant="text" icon="mdi-bookmark" size="small"></v-btn>
+                    <v-btn variant="text" icon="mdi-share-variant" size="small"></v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
       </v-tabs-window-item>
     </v-tabs-window>
   </v-card>

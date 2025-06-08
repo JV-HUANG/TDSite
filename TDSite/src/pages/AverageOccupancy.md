@@ -1,16 +1,14 @@
 ---
 layout: page
 hello: world
-title: LIGHTBOX PAGE
+title: Average Occupancy PAGE
 ---
 
 <script setup>
 import { ref } from 'vue'
 
-import LIGHTBOX from './components/lightbox.vue'
+import Average from './AverageOccupancy.vue'
 const count = ref(0)
 </script>
 
-# LIGHTBOX PAGEME
-
-<LIGHTBOX />
+<Average />

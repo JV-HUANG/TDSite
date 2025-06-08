@@ -2,7 +2,7 @@
 layout: home
 title: 哎呦哎呦！呦！
 hero:
-  name: "TDStart"
+  name: "桌面式"
   text: "......."
   tagline: "......"
   image:

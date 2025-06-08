@@ -15,7 +15,7 @@ const tab = ref(null)
 </script>
 
 <v-card variant="text" class="mr-9">
-    <v-tabs v-model="tab" class="w-full" align-tabs="center">
+    <v-tabs v-model="tab" class="w-full mb-3 border-b-1 border-green-400" align-tabs="center">
         <v-tab :value="1"><v-icon icon="mdi-chart-bar" />柱状|条形图</v-tab>
         <v-tab :value="2"><v-icon icon="mdi-chart-areaspline-variant" />堆积区域图</v-tab>
         <v-tab :value="3"><v-icon icon="mdi-chart-areaspline" />多重折线图</v-tab>

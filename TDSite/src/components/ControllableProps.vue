@@ -1,5 +1,5 @@
 <template>
-	<v-card class="w-full h-full"  variant="text">
+	<v-card class="w-full h-full mr-12"  variant="text">
 		<v-data-iterator :items="games" :items-per-page="6" :search="search">
 			<template v-slot:header>
 				<div class="px-2 py-2">

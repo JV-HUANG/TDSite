@@ -78,19 +78,19 @@ const RevenueCategoriesMultple = {
 </script>
 
 <template>
-  <h1>柱状图 条形图</h1>
+  <label class="text-h4">柱状图 条形图</label>
   <p>条形图用于表示数据，条形的长度与其所代表的值成比例。</p>
   <div class="grid grid-cols-2 gap-4 max-w-7xl mx-auto py-4">
-    <v-card variant="outlined" class="px-2 py-2">
-      <h1>垂直条形图</h1>
+    <v-card variant="plain" class="px-2 py-2">
+      <label class="text-h4">垂直条形图</label>
       <p>Website visitors per device</p>
       <BarChart :data="RevenueData" :height="250" :categories="RevenueCategoriesMultple" :y-axis="['desktop']"
         :radius="4" :x-formatter="(i: number): string => `${RevenueData[i]?.month}`" :y-formatter="(i: number) => i"
         :legend-position="LegendPosition.Top" />
     </v-card>
 
-    <v-card variant="outlined" class="px-2 py-2">
-      <h1>水平条形图</h1>
+    <v-card variant="plain" class="px-2 py-2">
+      <label class="text-h4">水平条形图</label>
       <p>Website visitors per device</p>
       <BarChart :data="RevenueData" :height="250" :categories="RevenueCategoriesMultple" :y-axis="['desktop']"
         :xNumTicks="6" :radius="4" :bar-padding="0" :orientation="Orientation.Horizontal"
@@ -98,8 +98,8 @@ const RevenueCategoriesMultple = {
         :legend-position="LegendPosition.Top" />
     </v-card>
 
-    <v-card variant="outlined" class="px-2 py-2">
-      <h1>条形图组</h1>
+    <v-card variant="plain" class="px-2 py-2">
+      <label class="text-h4">条形图组</label>
       <p>Website visitors per device</p>
       <BarChart :data="RevenueData" :height="250" :categories="RevenueCategoriesMultple"
         :y-axis="['desktop', 'mobile']" :group-padding="0" :bar-padding="0.2" :radius="4"
@@ -107,8 +107,8 @@ const RevenueCategoriesMultple = {
         :legend-position="LegendPosition.Top" />
     </v-card>
 
-    <v-card variant="outlined" class="px-2 py-2">
-      <h1>堆积条形图</h1>
+    <v-card variant="plain" class="px-2 py-2">
+      <label class="text-h4">堆积条形图</label>
       <p>Website visitors per device</p>
       <BarChart :data="RevenueData" :stacked="true" :height="250" :categories="RevenueCategoriesMultple"
         :y-axis="['desktop', 'mobile']" :group-padding="0" :bar-padding="0.2" :xNumTicks="6" :radius="4"
@@ -116,8 +116,8 @@ const RevenueCategoriesMultple = {
         :legend-position="LegendPosition.Top" />
     </v-card>
 
-    <v-card variant="outlined" class="px-2 py-2">
-      <h1>垂直条形图</h1>
+    <v-card variant="plain" class="px-2 py-2">
+      <label class="text-h4">垂直条形图</label>
       <p>Website visitors per device</p>
       <BarChart :data="VisitorsData.slice(0, 6)" :height="250" :categories="VisitorsCartegories"
         :y-axis="['visitors']" :x-num-ticks="6" :radius="4"
@@ -125,8 +125,8 @@ const RevenueCategoriesMultple = {
         :legend-position="LegendPosition.Top" />
     </v-card>
 
-    <v-card variant="outlined" class="px-2 py-2">
-      <h1>堆积水平条形图</h1>
+    <v-card variant="plain" class="px-2 py-2">
+      <label class="text-h4">堆积水平条形图</label>
       <p>Website visitors per device</p>
       <BarChart :data="RevenueData" :stacked="true" :height="250" :categories="RevenueCategoriesMultple"
         :y-axis="['desktop', 'mobile']" :group-padding="0" :bar-padding="0.2" :xNumTicks="6" :radius="4"
@@ -136,8 +136,8 @@ const RevenueCategoriesMultple = {
   </div>
 
   <div class="max-w-7xl mx-auto">
-    <v-card variant="outlined" class="px-2 py-2">
-    <h1>柱状图</h1>
+    <v-card variant="plain" class="px-2 py-2">
+    <label class="text-h4">柱状图</label>
     <p>Website visitors per device</p>
     <BarChart :data="RevenueDataLong" :height="358" :categories="RevenueCategories" :y-axis="['value']"
       :hide-legend="true" :y-formatter="(i: number) => i" :x-formatter="(i) => RevenueDataLong[i].date" />

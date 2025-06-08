@@ -7,11 +7,11 @@ title: GALLERY
 
 <SimpleGallery galleryID="my-test-gallery" :images="images" />
 
-<center>
-<v-btn prepend-icon="mdi-keyboard-backspace" href="/" variant="tonal">
-  返回首页
-</v-btn>
-</center>
+<div class="text-center">
+  <v-btn prepend-icon="mdi-keyboard-backspace" href="/" variant="tonal">
+    返回首页
+  </v-btn>
+</div>
 
 <script>
 import SimpleGallery from './components/SimpleGallery.vue';

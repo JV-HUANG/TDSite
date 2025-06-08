@@ -60,21 +60,25 @@ export default defineConfig({
     // siteTitle: false,//显示站点标题
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'HOME', link: '/' },
-      { text: 'SITE', link: '/TDSite' },
-      { text: 'DESKTOP', link: '/TDStart' },
+      { text: '主页', link: '/' },
+      { text: '网页', link: '/TDSite' },
+      { text: '桌面', link: '/TDStart' },
       {
-        text: 'EXAMPLES',
+        text: '示例',
         items: [
           { text: 'MARKDOWN', link: '/markdown-examples' },
           { text: 'RUNTIME API', link: '/api-examples' },
           { text: 'VUE CHARTS', link: '/charts' },
+          { text: 'VUE Data UI', link: '/pages/AverageOccupancy' },
           { text: 'LIGHT BOX', link: '/lightbox' },
+          { text: 'PRODUCTS', link: '/products' },
           { text: 'MEDIA PLAYER', link: '/media' },
           { text: 'PHOTO SWIPE', link: '/gallery' },
           { text: 'Controllable Props', link: '/controllableProps' },
           { text: 'DYNAMIC TABS', link: '/dynamicTabs' },
-          { text: 'VIME PLAYER', link: '/vimePlayer' }
+          { text: 'VIME PLAYER', link: '/vimePlayer' },
+          { text: 'Most popula rMice', link: '/popularMice' },
+          { text: 'DATA PAGES', link: '/pages/data' }
         ]
       }
     ],
@@ -86,12 +90,16 @@ export default defineConfig({
           { text: 'MARKDOWN', link: '/markdown-examples' },
           { text: 'RUNTIME API', link: '/api-examples' },
           { text: 'VUE CHARTS', link: '/charts' },
+          { text: 'VUE Data UI', link: '/pages/AverageOccupancy' },
           { text: 'LIGHT BOX', link: '/lightbox' },
+          { text: 'PRODUCTS', link: '/products' },
           { text: 'MEDIA PLAYER', link: '/media' },
           { text: 'PHOTO SWIPE', link: '/gallery' },
           { text: 'Controllable Props', link: '/controllableProps' },
           { text: 'DYNAMIC TABS', link: '/dynamicTabs' },
-          { text: 'VIME PLAYER', link: '/vimePlayer' }
+          { text: 'VIME PLAYER', link: '/vimePlayer' },
+          { text: 'Most popula rMice', link: '/popularMice' },
+          { text: 'DATA PAGES', link: '/pages/data' }
         ]
       }
     ],
