@@ -1,9 +1,9 @@
 <template>
   <div class="mx-auto grid grid-cols-4 gap-4 mr-9">
-    <v-card class="w-min my-2 px-2 py-2" variant="flat" 
+    <v-card class="w-min my-2 px-2 py-2" variant="tonal" 
       v-for="(img, idx) in imgs" :key="idx"  @click="() => onShowClick(idx)">
       <v-card-title class="text-subtitle-1">{{ img.title }}</v-card-title>
-      <v-img :width="210" :src="img.src ? img.src : img" cover />
+      <v-img class="w-full" :src="img.src ? img.src : img" cover />
       <v-card-subtitle>天地玄黄 宇宙洪荒 日月盈昃</v-card-subtitle>
       <v-card-actions>
         <v-btn prepend-icon="mdi-eye" text="浏览图片" block></v-btn>

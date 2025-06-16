@@ -61,23 +61,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: '网页', link: '/TDSite' },
-      { text: '桌面', link: '/TDStart' },
+      { text: '网页', link: '/pages/TDSite' },
+      { text: '桌面', link: '/pages/TDStart' },
       {
         text: '示例',
         items: [
-          { text: 'MARKDOWN', link: '/markdown-examples' },
-          { text: 'RUNTIME API', link: '/api-examples' },
-          { text: 'VUE CHARTS', link: '/charts' },
+          { text: 'MARKDOWN', link: '/pages/markdown-examples' },
+          { text: 'RUNTIME API', link: '/pages/api-examples' },
+          { text: 'VUE CHARTS', link: '/pages/charts' },
           { text: 'VUE Data UI', link: '/pages/AverageOccupancy' },
-          { text: 'LIGHT BOX', link: '/lightbox' },
-          { text: 'PRODUCTS', link: '/products' },
-          { text: 'MEDIA PLAYER', link: '/media' },
-          { text: 'PHOTO SWIPE', link: '/gallery' },
-          { text: 'Controllable Props', link: '/controllableProps' },
-          { text: 'DYNAMIC TABS', link: '/dynamicTabs' },
-          { text: 'VIME PLAYER', link: '/vimePlayer' },
-          { text: 'Most popula rMice', link: '/popularMice' },
+          { text: 'LIGHT BOX', link: '/pages/lightbox' },
+          { text: 'PRODUCTS', link: '/pages/products' },
+          { text: 'MEDIA PLAYER', link: '/pages/media' },
+          { text: 'PHOTO SWIPE', link: '/pages/gallery' },
+          { text: 'CONTROLLABLE PROPS', link: '/pages/controllableProps' },
+          { text: 'DYNAMIC TABS', link: '/pages/dynamicTabs' },
+          { text: 'VIME PLAYER', link: '/pages/vimePlayer' },
+          { text: 'MOST POP MICE', link: '/pages/popularMice' },
           { text: 'DATA PAGES', link: '/pages/data' }
         ]
       }
@@ -87,18 +87,18 @@ export default defineConfig({
       {
         text: '侧边栏',
         items: [
-          { text: 'MARKDOWN', link: '/markdown-examples' },
-          { text: 'RUNTIME API', link: '/api-examples' },
-          { text: 'VUE CHARTS', link: '/charts' },
+          { text: 'MARKDOWN', link: '/pages/markdown-examples' },
+          { text: 'RUNTIME API', link: '/pages/api-examples' },
+          { text: 'VUE CHARTS', link: '/pages/charts' },
           { text: 'VUE Data UI', link: '/pages/AverageOccupancy' },
-          { text: 'LIGHT BOX', link: '/lightbox' },
-          { text: 'PRODUCTS', link: '/products' },
-          { text: 'MEDIA PLAYER', link: '/media' },
-          { text: 'PHOTO SWIPE', link: '/gallery' },
-          { text: 'Controllable Props', link: '/controllableProps' },
-          { text: 'DYNAMIC TABS', link: '/dynamicTabs' },
-          { text: 'VIME PLAYER', link: '/vimePlayer' },
-          { text: 'Most popula rMice', link: '/popularMice' },
+          { text: 'LIGHT BOX', link: '/pages/lightbox' },
+          { text: 'PRODUCTS', link: '/pages/products' },
+          { text: 'MEDIA PLAYER', link: '/pages/media' },
+          { text: 'PHOTO SWIPE', link: '/pages/gallery' },
+          { text: 'CONTROLLABLE PROPS', link: '/pages/controllableProps' },
+          { text: 'DYNAMIC TABS', link: '/pages/dynamicTabs' },
+          { text: 'VIME PLAYER', link: '/pages/vimePlayer' },
+          { text: 'MOST POP MICE', link: '/pages/popularMice' },
           { text: 'DATA PAGES', link: '/pages/data' }
         ]
       }

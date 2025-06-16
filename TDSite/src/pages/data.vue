@@ -5,14 +5,15 @@
                 <v-toolbar color="transparent" class="px-2">
                     <v-text-field v-model="search" density="comfortable" placeholder="Search"
                         prepend-inner-icon="mdi-magnify" style="max-width: 300px;" variant="outlined" clearable
-                        hide-details></v-text-field>
+                        hide-details>
+                    </v-text-field>
                 </v-toolbar>
             </template>
             <template v-slot:default="{ items }">
                 <v-container class="pa-2" fluid>
                     <v-row dense>
                         <v-col v-for="item in items" :key="item.title" cols="auto" md="4">
-                            <v-card class="pb-3" border flat>
+                            <v-card variant="tonal" class="pb-3" border flat>
                                 <v-img :src="item.raw.img"></v-img>
                                 <v-list-item :subtitle="item.raw.subtitle" class="mb-2">
                                     <template v-slot:title>

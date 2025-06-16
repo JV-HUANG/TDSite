@@ -3,8 +3,6 @@ layout: page
 title: GALLERY
 ---
 
-# PHOTO SWIPE GALLERY
-
 <SimpleGallery galleryID="my-test-gallery" :images="images" />
 
 <div class="text-center">
@@ -14,7 +12,7 @@ title: GALLERY
 </div>
 
 <script>
-import SimpleGallery from './components/SimpleGallery.vue';
+import SimpleGallery from '../components/SimpleGallery.vue';
 export default {
   name: 'App',
   components: {

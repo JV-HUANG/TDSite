@@ -1,16 +1,15 @@
 <template>
   <v-card variant="text" class="my-2 mr-9">
-    <v-toolbar color="primary" image="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>PAGE TITLE</v-toolbar-title>
-      <v-btn icon="mdi-tab-minus" :disabled="!length" @click="length--"></v-btn>
-      <v-btn icon="mdi-tab-plus" @click="length++"></v-btn>
-      <v-btn icon="mdi-magnify"></v-btn>
-      <v-btn icon="mdi-dots-vertical"></v-btn>
+    <v-toolbar height="5">
       <template v-slot:extension>
         <v-tabs show-arrows v-model="model" align-tabs="center">
           <v-tab v-for="i in length" :key="i" :text="`Item ${i}`" :value="i"></v-tab>
         </v-tabs>
+        <v-spacer></v-spacer>
+        <v-btn icon="mdi-tab-minus" :disabled="!length" @click="length--"></v-btn>
+        <v-btn icon="mdi-tab-plus" @click="length++"></v-btn>
+        <v-btn icon="mdi-magnify"></v-btn>
+        <v-btn icon="mdi-dots-vertical"></v-btn>
       </template>
     </v-toolbar>
     <v-tabs-window v-model="model">

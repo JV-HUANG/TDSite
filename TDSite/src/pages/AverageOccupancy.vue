@@ -1,23 +1,175 @@
-
-
 <script setup>
-    import { ref } from "vue";
-    import { VueUiChestnut } from "vue-data-ui";
-    import "vue-data-ui/style.css";
+import { ref } from "vue";
+import { VueUi3dBar } from "vue-data-ui";
+import "vue-data-ui/style.css"; // If you are using multiple components, place styles import in your main
 
-    const config = ref({"style":{"fontFamily":"inherit","chart":{"backgroundColor":"#2A2A2A","color":"#CCCCCC","layout":{"grandTotal":{"show":true,"color":"#CCCCCC","fontSize":20,"text":"Grand total","bold":true,"prefix":"$ ","suffix":"","roundingValue":0,"offsetY":0},"roots":{"stroke":"#2A2A2A","strokeWidth":5,"useGradient":true,"gradientIntensity":20,"underlayerColor":"#FFFFFF","labels":{"show":true,"adaptColorToBackground":true,"color":"#FFFFFF","fontSize":16,"bold":true,"prefix":"$ ","suffix":"","roundingValue":0,"name":{"color":"#CCCCCC","fontSize":16,"bold":true}}},"verticalSeparator":{"stroke":"#2A2A2A","strokeWidth":5},"links":{"opacity":10},"branches":{"stroke":"#2A2A2A","strokeWidth":0,"borderRadius":6,"useGradient":true,"gradientIntensity":20,"underlayerColor":"#FFFFFF","widthRatio":1.5,"labels":{"show":true,"color":"#CCCCCC","fontSize":14,"bold":true,"dataLabels":{"show":true,"fontSize":14,"hideUnderValue":5,"roundingValue":0,"roundingPercentage":0,"prefix":"$ ","suffix":""}}},"nuts":{"useGradient":true,"gradientIntensity":30,"offsetX":0,"selected":{"useMotion":true,"useGradient":true,"gradientIntensity":40,"roundingValue":0,"roundingPercentage":0,"labels":{"dataLabels":{"hideUnderValue":5,"color":"#CCCCCC","fontSize":12,"bold":true,"prefix":"$ ","suffix":""},"core":{"total":{"color":"#CCCCCC","fontSize":14,"bold":true},"value":{"color":"#CCCCCC","fontSize":14,"bold":true,"prefix":"$ ","suffix":""}}}}},"legend":{"fontSize":16,"roundingValue":0,"roundingPercentage":0,"prefix":"$ ","suffix":""},"title":{"text":"Retail revenue","color":"#CCCCCC","fontSize":20,"bold":true,"offsetY":0,"subtitle":{"text":"2025 projections","color":"#CCCCCC","fontSize":16,"bold":false,"offsetY":0}}}}},"table":{"show":false,"responsiveBreakpoint":400,"th":{"backgroundColor":"#2A2A2A","color":"#CCCCCC","outline":"none","translations":{"rootName":"Region","rootValue":"Region value","rootToTotal":"% / total","branchName":"Country","branchValue":"Country value","branchToRoot":"% / region","branchToTotal":"% / total","nutName":"breakdown name","nutValue":"breakdown value","nutToBranch":"% / country","nutToRoot":"% / region","nutToTotal":"% / total"}},"td":{"backgroundColor":"#2A2A2A","color":"#CCCCCC","outline":"none","roundingValue":0,"roundingPercentage":0}},"userOptions":{"show":true},"translations":{"total":"Total","proportionToTree":"of grand total","of":"of"}});
+const config = ref({
+        theme: '',
+        customPalette: [],
+        style: {
+            fontFamily: 'inherit',
+            shape: 'bar',
+            chart: {
+                animation: {
+                    use: true,
+                    speed: 1,
+                    acceleration: 1
+                },
+                backgroundColor: '#000000ff',
+                color: '#ffffffff',
+                bar: {
+                    color: '#6376DDff',
+                    stroke: '#6376DDff',
+                    strokeWidth: 0.7,
+                    shadeColor: '#2D353C'
+                },
+                box: {
+                    stroke: '#CCCCCCff',
+                    strokeWidth: 0.7,
+                    strokeDasharray: 2,
+                    dimensions: {
+                        width: 128,
+                        height: 256,
+                        top: 27,
+                        bottom: 9,
+                        left: 24,
+                        right: 24,
+                        perspective: 18
+                    }
+                },
+                title: {
+                    text: 'Title',
+                    color: '#ffffffff',
+                    fontSize: 20,
+                    bold: true,
+                    textAlign: 'center',
+                    paddingLeft: 0,
+                    paddingRight: 0,
+                    subtitle: {
+                        color: '#A1A1A1ff',
+                        text: '000000',
+                        fontSize: 16,
+                        bold: false
+                    }
+                },
+                legend: {
+                    showDefault: true,
+                    fontSize: 10,
+                    color: '#ffffffff',
+                    bold: false,
+                    roundingValue: 0,
+                    roundingPercentage: 0,
+                    prefix: '',
+                    suffix: '',
+                    hideUnderPercentage: 3
+                },
+                dataLabel: {
+                    show: true,
+                    bold: true,
+                    color: '#ffffffff',
+                    fontSize: 12,
+                    rounding: 1,
+                    formatter: null
+                }
+            }
+        },
+        userOptions: {
+            show: true,
+            showOnChartHover: false,
+            keepStateOnChartLeave: true,
+            position: 'right',
+            buttons: {
+                tooltip: false,
+                pdf: true,
+                csv: true,
+                img: true,
+                table: true,
+                labels: false,
+                fullscreen: true,
+                sort: false,
+                stack: false,
+                animation: false,
+                annotator: true
+            },
+            buttonTitles: {
+                open: 'Open options',
+                close: 'Close options',
+                pdf: 'Download PDF',
+                csv: 'Download CSV',
+                img: 'Download PNG',
+                table: 'Toggle table',
+                fullscreen: 'Toggle fullscreen',
+                annotator: 'Toggle annotator'
+            },
+            print: {
+                allowTaint: false,
+                backgroundColor: '#FFFFFFff',
+                useCORS: false,
+                onclone: null,
+                scale: 2,
+                logging: false
+            }
+        },
+        table: {
+            show: false,
+            responsiveBreakpoint: 400,
+            columnNames: {
+                series: 'Series',
+                value: 'Value',
+                percentage: 'Percentage'
+            },
+            th: {
+                backgroundColor: '#FFFFFFff',
+                color: '#ffffffff',
+                outline: 'none'
+            },
+            td: {
+                backgroundColor: '#FFFFFFff',
+                color: '#ffffffff',
+                outline: 'none',
+                roundingValue: 0,
+                roundingPercentage: 0
+            }
+        }
+    });
 
-    const dataset = ref([{"name":"America","color":"#42d392","branches":[{"name":"Brazil","value":9520,"breakdown":[{"name":"Boutique","value":4200,"color":"#f542e3"},{"name":"Online shop","value":5320,"color":"#f5c542"}]},{"name":"Mexico","value":4485,"breakdown":[{"name":"Boutique","value":1320,"color":"#f542e3"},{"name":"Online shop","value":3165,"color":"#f5c542"}]},{"name":"USA","value":19676,"breakdown":[{"name":"Boutique","value":6940,"color":"#f542e3"},{"name":"Online shop","value":12736,"color":"#f5c542"}]}]},{"name":"Europe","color":"#6376DD","branches":[{"name":"France","value":13750,"breakdown":[{"name":"Boutique","value":6500,"color":"#f542e3"},{"name":"Online shop","value":7250,"color":"#f5c542"}]},{"name":"Germany","value":14550,"breakdown":[{"name":"Boutique","value":4930,"color":"#f537e3"},{"name":"Online shop","value":9620,"color":"#f5c542"}]},{"name":"Spain","value":10056,"breakdown":[{"name":"Boutique","value":3843,"color":"#f537e3"},{"name":"Online shop","value":6213,"color":"#f5c542"}]}]},{"name":"Asia","color":"#f04f19","branches":[{"name":"India","value":9620,"breakdown":[{"name":"Boutique","value":7400,"color":"#f537e3"},{"name":"Online shop","value":2220,"color":"#f5bb42"}]},{"name":"Japan","value":12670,"breakdown":[{"name":"Boutique","value":4250,"color":"#f537e3"},{"name":"Online shop","value":8420,"color":"#f5c542"}]},{"name":"China","value":26209,"breakdown":[{"name":"Boutique","value":8620,"color":"#f537e3"},{"name":"Online shop","value":17589,"color":"#f5c542"}]}]}]);
+const dataset = ref({
+    series: [
+        {
+            name: 'Serie 1',
+            value: 128,
+            color: '#5f8bee',
+            id: '1',
+            breakdown: []
+        },
+        {
+            name: 'Serie 2',
+            value: 64,
+            color: '#42d392',
+            id: '2',
+            breakdown: []
+        },
+        {
+            name: 'Serie 3',
+            value: 32,
+            color: '#ff6400',
+            id: '3',
+            breakdown: []
+        }
+    ]
+});
 </script>
-
 <template>
-    <!-- Place the component inside a div with a given width -->
-    <v-card variant="tonal" class="w-min mr-auto my-4 px-2 py-2 gap-4">
-        <h4>
-            <a href="https://vue-data-ui.graphieros.com/examples" target="_blank">
-                https://vue-data-ui.graphieros.com/examples
-            </a>
-        </h4>
-        <VueUiChestnut :dataset="dataset" :config="config" />
-    </v-card>
+    <h5 class="text-h5">
+        <a href="https://vue-data-ui.graphieros.com/examples" target="_blank">
+            https://vue-data-ui.graphieros.com/examples
+        </a>
+    </h5>
+    <!-- Using a wrapper is optional -->
+    <div class="w-full pr-9">
+        <VueUi3dBar
+            :config="config"
+            :dataset="dataset"
+        />
+    </div>
 </template>

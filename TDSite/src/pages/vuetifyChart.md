@@ -6,7 +6,7 @@ title: DEMO
 <script setup>
 import { ref } from 'vue'
 
-import VuetifyChart from './components/VuetifyChart.vue'
+import VuetifyChart from '../components/VuetifyChart.vue'
 const count = ref(0)
 </script>
 

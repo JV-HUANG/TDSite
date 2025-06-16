@@ -5,14 +5,15 @@
 				<div class="px-2 py-2">
 					<v-text-field v-model="search" density="comfortable" placeholder="Search"
 						prepend-inner-icon="mdi-magnify" class="max-w-1/2" variant="outlined" clearable
-						hide-details></v-text-field>
+						hide-details>
+					</v-text-field>
 				</div>
 			</template>
 			<template v-slot:default="{ items }">
 				<v-container class="pa-2" fluid>
 					<v-row dense>
 						<v-col v-for="item in items" :key="item.title" cols="auto" md="4">
-							<v-card class="pb-3" border flat>
+							<v-card variant="tonal" class="pb-3" border flat>
 								<a :href="item.raw.img" target="_blank">
 									<v-img :src="item.raw.img"></v-img>
 								</a>
@@ -24,7 +25,7 @@
 									</template>
 								</v-list-item>
 								<div class="d-flex justify-space-between px-4">
-									<div class="d-flex align-center text-caption text-medium-emphasis me-1">
+									<div class="d-flex align-center text-caption me-1">
 										<v-icon icon="mdi-clock" start></v-icon>
 										<div class="text-truncate">{{ item.raw.duration }}</div>
 									</div>

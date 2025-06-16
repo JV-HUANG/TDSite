@@ -7,7 +7,7 @@ title: LIGHTBOX PAGE
 <script setup>
 import { ref } from 'vue'
 
-import LIGHTBOX from './components/lightbox.vue'
+import LIGHTBOX from '../components/lightbox.vue'
 const count = ref(0)
 </script>
 

@@ -6,9 +6,9 @@ title: DEMO
 
 <script setup>
 import { ref } from 'vue'
-import BarChart from './components/Charts/BarChart.vue'
-import AreaChart from './components/Charts/AreaChart.vue'
-import BaseLine from './components/Charts/BaseLine.vue'
+import BarChart from '../components/Charts/BarChart.vue'
+import AreaChart from '../components/Charts/AreaChart.vue'
+import BaseLine from '../components/Charts/BaseLine.vue'
 const count = ref(0)
 
 const tab = ref(null)
